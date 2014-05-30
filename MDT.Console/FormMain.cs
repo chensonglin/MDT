@@ -111,41 +111,6 @@ namespace MDT.Console
             Cursor.Current = Cursors.Default;
         }
 
-        private void nbiDatabase_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            Application.DoEvents();
-
-            Cursor.Current = Cursors.WaitCursor;
-            addUserControl(e.Link.Caption);
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void nbiTask_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            Application.DoEvents();
-
-            Cursor.Current = Cursors.WaitCursor;
-            addUserControl(e.Link.Caption);
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void nbiTaskAllocation_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            Application.DoEvents();
-
-            Cursor.Current = Cursors.WaitCursor;
-            addUserControl(e.Link.Caption);
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void nbiTraceLog_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            Application.DoEvents();
-
-            Cursor.Current = Cursors.WaitCursor;
-            addUserControl(e.Link.Caption);
-            Cursor.Current = Cursors.Default;
-        }
 
         private void pnlTop_Paint(object sender, PaintEventArgs e)
         {

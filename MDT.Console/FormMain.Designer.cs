@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -127,7 +126,7 @@
             this.nbiTraceLog.Caption = "日志信息";
             this.nbiTraceLog.Name = "nbiTraceLog";
             this.nbiTraceLog.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTraceLog.SmallImage")));
-            this.nbiTraceLog.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTraceLog_LinkClicked);
+            this.nbiTraceLog.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbi_LinkClicked);
             // 
             // navBarGroup2
             // 
@@ -144,21 +143,21 @@
             this.nbiDatabase.Caption = "数据源配置";
             this.nbiDatabase.Name = "nbiDatabase";
             this.nbiDatabase.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiDatabase.SmallImage")));
-            this.nbiDatabase.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDatabase_LinkClicked);
+            this.nbiDatabase.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbi_LinkClicked);
             // 
             // nbiTaskAllocation
             // 
             this.nbiTaskAllocation.Caption = "任务分配";
             this.nbiTaskAllocation.Name = "nbiTaskAllocation";
             this.nbiTaskAllocation.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTaskAllocation.SmallImage")));
-            this.nbiTaskAllocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTaskAllocation_LinkClicked);
+            this.nbiTaskAllocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbi_LinkClicked);
             // 
             // nbiTask
             // 
             this.nbiTask.Caption = "任务配置";
             this.nbiTask.Name = "nbiTask";
             this.nbiTask.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTask.SmallImage")));
-            this.nbiTask.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTask_LinkClicked);
+            this.nbiTask.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbi_LinkClicked);
             // 
             // navBarGroup3
             // 

@@ -1,0 +1,340 @@
+﻿@charset "utf-8";
+html,body {
+	background:url(../images/mainNavBody.gif) repeat-y left;
+	min-width:960px;
+	min-height:500px;
+}
+body{
+	margin:0 50px;}
+/*头部*/
+#header {
+	height:73px;
+	background:url(../images/headerBg.gif) left top no-repeat;
+	position:relative;
+	margin-bottom:5px;
+}
+/*logo*/
+#logo {
+	margin:15px 0 14px 15px;
+	float:left;}
+#loginLogo{
+    margin:15px 0;
+	width:100%;}
+#loginLogo a{
+	text-indent:-9999px;
+    font-size:0;
+    display:block;
+    width:280px;
+	height:44px;
+	background:url(../images/logo.png) left top no-repeat;
+    left: 50%;
+	margin-left:-280px;
+    position: relative;}
+#logo a{
+    text-indent:-9999px;
+    font-size:0;
+    display:block;
+    width:280px;
+	height:44px;
+	background:url(../images/logo.png) left top no-repeat;
+	z-index:90;}
+
+#navTab{
+	position:relative;
+	top:0;
+	right:10px;
+	float:left;
+    margin:45px 0 0 23px;
+	border-right:1px solid #8bb6ef;
+	}
+#navTab li{
+	float:left;
+	border-color:#8bb6ef;
+	border-style:solid;
+	border-width:1px 0 0 1px;
+	background:url(../images/navTabBg.jpg) repeat-x;
+	}
+#navTab li a{
+	display:block;
+	float:left;
+	height:21px;
+	line-height:21px;
+	text-decoration:none;
+	color:#000;
+	padding:0 15px;
+	margin:0;
+	}
+#navTab li a.on{
+	background-color:#f4f9ff;
+	background-image:none;
+	}
+#navTab li a:hover{
+	background:url(../images/navTabBgOver.jpg)  repeat-x;
+	}
+#user {
+	position:relative;
+	top:0;
+	float:right;
+    margin-top: 42px;
+}
+#user a{
+	vertical-align:middle;}
+.toolsBoard{
+	display:inline;}	
+.toolsBoard a
+{
+    color:#000;
+	display:inline-block;
+	_display:inline;
+	height:23px;
+	line-height:23px;
+	padding:1px 6px;
+	text-decoration:none;}
+.toolsBoard a:hover{
+	padding:0 5px;
+	background-image:url(../images/topNavOverBg.jpg);
+	border:solid 1px #A8C875;
+	text-decoration:none;}
+
+
+/*内容区*/
+#content {
+}
+.logBody{
+	width:812px;
+	height:337px;
+	position:relative;
+	left:50%;
+	margin-left:-406px;
+	background:url(../images/loginBG.jpg);
+	}
+.loginBoard{
+	float: right;
+	width:385px;
+    margin-top: 40px;
+	font-size:14px;}
+.loginBoard li{
+	line-height:25px;
+	margin:8px 0;}
+.loginBoard li a{
+	color:#1483f2}
+.loginBoard li label{
+	text-align:justify;
+	width:80px;
+	display:inline-block;}
+/*面包屑*/
+#crumbs{
+	width:100%;
+	height:16px;
+	padding-left:21px;
+	margin-bottom:5px;
+	}
+#crumbs a{
+	margin:0 5px;}
+#search{
+	height:auto;
+	padding:5px 0;
+	background-color:#d7e9fd;
+	border:#a3c0e8 solid 1px;
+	margin-bottom:5px;
+/*  *position:relative;
+	_overflow-y:visible;*/}
+#search label{
+	display:inline-block;
+	/*width:36px;*//*原70*/
+	margin-left:5px;
+	text-align:left;
+	}	
+/*.titleTR
+{
+    background-color:#d7e9fd; border:1px solid #a3c0e8; height:20px; text-align:left;
+}*/
+.titleTR
+{
+    background-color:#EAEAEA; border:1px solid #DBDBDB; height:20px; text-align:left;/* E5E5E5  EAEAEA*/
+}
+	
+/*分页*/
+.page{
+	height:37px;
+	line-height:37px;
+	background:url(../images/pageBG.jpg) repeat-x #c6deff;
+	border-color:#a3c0e8;
+	border-style:solid;
+	border-width:0 1px 1px;
+	clear:both;
+	}
+.page ul li{
+	float:left;
+	height:37px;
+	line-height:37px;}
+.page ul li a{
+	padding:0 3px;
+	cursor:pointer;
+	text-decoration:none;}	
+.page ul a.on{
+	background-color:#ffe7a2;
+	border:#ffbd69 1px solid;}
+.page input.SBC {
+    background: url("../images/pageGo.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 19px;
+    margin:9px 5px;
+    width: 19px;
+}
+.page input.PIC {
+    border: 1px solid #aecaf0;
+    height: 18px;
+    text-align: center;
+    width: 22px;
+    margin:8px 5px;
+}
+.leftPosition{
+	float:left;}
+.rightPosition{
+	float:right;}
+
+#dataGrid{
+    background-color: transparent;
+	float:left;
+	width:100%;
+	}
+/*表格*/
+
+#dataTable  {
+	border-collapse: collapse;
+	width:100%;
+	border-collapse:collapse;
+	border:1px solid #a3c0e8;
+	background-color: white;
+}
+#dataTable thead {
+	background:url(../images/dataTableTitle.jpg) repeat-x #e0edff;
+}
+#dataTable th{ border:1px solid #a3c0e8;
+	font-weight:normal;}
+#dataTable td,#dataTable th{
+	border:1px solid #a3c0e8;
+	padding:0 5px;
+	margin:0;		
+}
+#dataTable tr {
+height:25px;	
+line-height:25px
+}
+
+#fooder{
+	float:left;
+	width:100%;}
+/*版权*/
+#copyright{
+	width:340px;
+	margin:45px auto 20px;
+}
+#copyright a{
+	margin:0 5px;
+}
+/*表单验证*/
+label.error{
+    background: url("../images/icon.png") no-repeat scroll 0 -390px transparent;
+    margin-left: 5px;
+	height:18px;}
+.missionAllot{
+	width:905px;
+	position:relative;
+	left:50%;
+	margin-left:-452px;
+	overflow:hidden;}
+.missionAllotH{
+	float:left;
+	text-align:center;}
+.missionAllotH .headerL{
+	width: 157px;
+	float: left;}
+.missionAllotH .headerM{
+	width: 157px;
+	text-align:left;
+	float: left;}
+.missionAllotH .headerR{
+	width: 460px;
+	float: left;}
+.missionAllotB{
+	float:left;
+	border:1px solid #aecaf0;}
+.missionAllotL{
+	width:157px;
+	height:400px;
+	background:url(../images/missionAllotL_Bg.jpg) repeat-y left;
+	float:left;}
+.missionAllotR{
+	width:730px;
+	height:400px;
+	float:left;}
+.missionAllotF{
+	clear:both;
+	text-align:center;}
+	
+	.timeContainer{
+	border:1px solid #FCC;
+	display:none;
+	}
+	
+	/*cfl 定义样式   用于在新增任务页面使用，在滚动条滚动时，表头不滚动*/
+#cflDataTable  {
+	border-collapse: collapse;
+	width:100%;
+	border-collapse:collapse;
+	border:1px solid #a3c0e8;
+	background-color: white;
+}
+#cflDataTable thead {
+	background:url(../images/dataTableTitle.jpg) repeat-x #e0edff;
+}
+#cflDataTable th 
+{
+    border:1px solid #a3c0e8;
+	font-weight:normal;}
+#cflDataTable tr {
+height:25px;	
+line-height:25px
+}
+/*      只显示底线         */
+.ListTable  {
+	width:100%;
+}
+.tdBottom{
+	border-bottom:1px solid #a3c0e8;/*dashed*/
+	padding:0 5px;
+	margin:0;		
+}
+.ListTable tr {
+height:25px;	
+line-height:25px
+}
+
+
+/*表格     在dataList中使用*/
+
+.dataList  {
+	border-collapse: collapse;
+	width:100%;
+	border-collapse:collapse;
+	border:1px solid #a3c0e8;
+	background-color: white;
+}
+.dataList thead {
+	background:url(../images/dataTableTitle.jpg) repeat-x #e0edff;
+}
+.dataList th{ border:1px solid #a3c0e8;
+	font-weight:normal;}
+.dataList td,.dataList th{
+	border:1px solid #a3c0e8;
+	padding:0 5px;
+	margin:0;		
+}
+.dataList tr {
+height:25px;	
+line-height:25px
+}
+
+

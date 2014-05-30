@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90372A6D-4C57-4A9F-AB21-D6BA0A9E054E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MDT.Console</RootNamespace>
+    <AssemblyName>MDT.Console</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>E:\PUBLISH\MDTCONSOLE\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.100.62/mopinstaller/</InstallUrl>
+    <UpdateUrl>http://192.168.100.62/mopinstaller/</UpdateUrl>
+    <PublisherName>五洲在线电子商务（北京）有限公司</PublisherName>
+    <MinimumRequiredVersion>1.0.1.23</MinimumRequiredVersion>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>transfer_48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2934B0F0DC2BF95B7DAD9DEB26756C2D8D84CC1A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Core, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Extensions, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v13.1, Version=13.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.Setting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\ICSharpCode.Setting.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.TextEditor">
+      <HintPath>..\SharedLibrary\ICSharpCode.TextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormDatabaseSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatabaseSet.Designer.cs">
+      <DependentUpon>FormDatabaseSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage2.Designer.cs">
+      <DependentUpon>FormMessage2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaskSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaskSet.Designer.cs">
+      <DependentUpon>FormTaskSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaskEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaskEdit.designer.cs">
+      <DependentUpon>FormTaskEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTaskSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaskSetting.Designer.cs">
+      <DependentUpon>FormTaskSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTraceLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTraceLog.Designer.cs">
+      <DependentUpon>FormTraceLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNewUser.Designer.cs">
+      <DependentUpon>FormAddNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyPwd.Designer.cs">
+      <DependentUpon>FormModifyPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMenu.Designer.cs">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTaskAllocation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTaskAllocation.Designer.cs">
+      <DependentUpon>UCTaskAllocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCParameters.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCParameters.Designer.cs">
+      <DependentUpon>UCParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTask.Designer.cs">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDatabase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDatabase.Designer.cs">
+      <DependentUpon>UCDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTraceLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTraceLog.Designer.cs">
+      <DependentUpon>UCTraceLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTextEditor.Designer.cs">
+      <DependentUpon>UCTextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCTraceLogMaster.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTraceLogMaster.Designer.cs">
+      <DependentUpon>UCTraceLogMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCUserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUserList.Designer.cs">
+      <DependentUpon>UCUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserEntity.cs" />
+    <EmbeddedResource Include="FormDatabaseSet.resx">
+      <DependentUpon>FormDatabaseSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage2.resx">
+      <DependentUpon>FormMessage2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaskSet.resx">
+      <DependentUpon>FormTaskSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaskEdit.resx">
+      <DependentUpon>FormTaskEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaskSetting.resx">
+      <DependentUpon>FormTaskSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTraceLog.resx">
+      <DependentUpon>FormTraceLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddNewUser.resx">
+      <DependentUpon>FormAddNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyPwd.resx">
+      <DependentUpon>FormModifyPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UCMenu.resx">
+      <DependentUpon>UCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTaskAllocation.resx">
+      <DependentUpon>UCTaskAllocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCParameters.resx">
+      <DependentUpon>UCParameters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTask.resx">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDatabase.resx">
+      <DependentUpon>UCDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTraceLog.resx">
+      <DependentUpon>UCTraceLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTextEditor.resx">
+      <DependentUpon>UCTextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTraceLogMaster.resx">
+      <DependentUpon>UCTraceLogMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUserList.resx">
+      <DependentUpon>UCUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MDT.Console_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\DevExpress.Data.v10.1.dll" />
+    <Content Include="lib\DevExpress.Data.v13.1.dll" />
+    <Content Include="lib\DevExpress.Utils.v10.1.dll" />
+    <Content Include="lib\DevExpress.Utils.v13.1.dll" />
+    <Content Include="lib\DevExpress.XtraEditors.v10.1.dll" />
+    <Content Include="lib\DevExpress.XtraEditors.v13.1.dll" />
+    <Content Include="lib\DevExpress.XtraGrid.v10.1.dll" />
+    <Content Include="lib\DevExpress.XtraGrid.v13.1.dll" />
+    <Content Include="lib\DevExpress.XtraTreeList.v10.1.dll" />
+    <Content Include="lib\DevExpress.XtraTreeList.v13.1.dll" />
+    <Content Include="lib\ICSharpCode.Setting.dll" />
+    <Content Include="lib\ICSharpCode.TextEditor.dll" />
+    <Content Include="lib\Mic.MopJob.BLL.dll" />
+    <Content Include="lib\Mic.MopJob.DAL.dll" />
+    <Content Include="lib\Mic.MopJob.Model.dll" />
+    <Content Include="lib\Mic.MopJob.Utility.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="lib\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="lib\Microsoft.Practices.Unity.dll" />
+    <Content Include="lib\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="lib\MySql.Data.dll" />
+    <Content Include="lib\MySql.Data.Entity.dll" />
+    <Content Include="lib\MySql.Web.dll" />
+    <Content Include="lib\OAuth.Core.dll" />
+    <Content Include="lib\System.Linq.Dynamic.dll" />
+    <Content Include="MappingToXSLT.xslt" />
+    <None Include="Resources\user.ico" />
+    <None Include="Resources\time.ico" />
+    <Content Include="transfer_48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MDT.DataProducer.DataContract\MDT.DataProducer.DataContract.csproj">
+      <Project>{E0C259E2-26BE-4505-95EF-AA54F762CC77}</Project>
+      <Name>MDT.DataProducer.DataContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDT.ManageCenter.DAL\MDT.ManageCenter.DAL.csproj">
+      <Project>{257E988A-D7E9-437A-BACD-1754B7B47AFD}</Project>
+      <Name>MDT.ManageCenter.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDT.ManageCenter.DataContract\MDT.ManageCenter.DataContract.csproj">
+      <Project>{01E1B6F4-C3CC-4AD8-943D-4D4A09F3A086}</Project>
+      <Name>MDT.ManageCenter.DataContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDT.ManageCenter.ServiceContract\MDT.ManageCenter.ServiceContract.csproj">
+      <Project>{1006A4E2-AFD4-4893-B167-4A34001C008B}</Project>
+      <Name>MDT.ManageCenter.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDT.ManageCenter.ServiceImplement\MDT.ManageCenter.ServiceImplement.csproj">
+      <Project>{167E8208-BE41-4067-B3A2-ECCE4F80870F}</Project>
+      <Name>MDT.ManageCenter.ServiceImplement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDT.Utility\MDT.Utility.csproj">
+      <Project>{9CED3F2A-4C8B-4CAB-B98B-08E86963B021}</Project>
+      <Name>MDT.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.Linq.Dynamic\System.Linq.Dynamic.csproj">
+      <Project>{C1958B92-6CFB-4B34-B9DB-F3A27EE0592C}</Project>
+      <Name>System.Linq.Dynamic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

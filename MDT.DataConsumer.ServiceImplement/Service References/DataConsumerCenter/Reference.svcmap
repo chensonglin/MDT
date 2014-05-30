@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="34945e6f-df20-4bbf-9c62-7e79c2b6a9cc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6668/DataConsumerCenter.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataConsumerCenterService.wsdl" MetadataType="Wsdl" ID="53a59787-8a32-4d40-86f9-ff3098cf92ca" SourceId="1" SourceUrl="http://localhost:6668/DataConsumerCenter.svc?wsdl" />
+    <MetadataFile FileName="DataConsumerCenter.xsd" MetadataType="Schema" ID="0abe849d-3d9d-4d9b-bb4e-0c85489064a1" SourceId="1" SourceUrl="http://localhost:6668/DataConsumerCenter.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataConsumerCenter1.xsd" MetadataType="Schema" ID="09462a7b-debd-4216-bd06-4424b5537c80" SourceId="1" SourceUrl="http://localhost:6668/DataConsumerCenter.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataConsumerCenter.disco" MetadataType="Disco" ID="59d78ab5-b196-411f-8dac-20c32ecc7394" SourceId="1" SourceUrl="http://localhost:6668/DataConsumerCenter.svc?disco" />
+    <MetadataFile FileName="DataConsumerCenter2.xsd" MetadataType="Schema" ID="38e5b1ab-57d6-40cb-84c6-558180d1076c" SourceId="1" SourceUrl="http://localhost:6668/DataConsumerCenter.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

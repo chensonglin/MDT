@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TOPConfig>
+  <System>
+    <PageSize>50</PageSize>
+  </System>
+  <Fields>
+    <Trade>
+      tid,status,created,pay_time,consign_time,end_time,modified
+    </Trade>
+    <TradeAll>
+      buyer_nick,created,sid,tid,status,payment,discount_fee,adjust_fee,post_fee,total_fee,pay_time,end_time,modified,
+      consign_time,buyer_obtain_point_fee,point_fee,real_point_fee,received_payment,commission_fee,buyer_memo,seller_memo,
+      alipay_no,buyer_message,buyer_alipay_no,receiver_name,receiver_state,receiver_city,receiver_district,receiver_address,
+      receiver_zip,receiver_mobile,receiver_phone,buyer_email,available_confirm_fee,trade_memo,type,cod_fee,invoice_name,shipping_type,
+      orders.num,orders.oid,orders.title,orders.outer_iid,orders.outer_sku_id,orders.price,orders.is_oversold
+    </TradeAll>
+    <Refund>
+      refund_id,tid,title,buyer_nick,seller_nick,total_fee,status,created,refund_fee,oid,good_status,company_name,sid,payment,reason,desc,has_good_return,modified,order_status
+    </Refund>
+    <RefundAll>
+      refund_id,alipay_no,tid,oid,buyer_nick,seller_nick,total_fee,status,created,refund_fee,good_status,has_good_return,
+      payment,reason,desc,iid,title,price,num,good_return_time,company_name,sid,address,shipping_type,refund_remind_timeout
+    </RefundAll>
+    <TradesSold>tid,status,created,modified</TradesSold>
+    <Brand>brand.vid, brand.name, brand.pid, brand.prop_name</Brand>
+    <ItemsInventory>num_iid,props</ItemsInventory>
+    <Item>num_iid,title,cid,props,input_pids,input_str,num,price,outer_id,approve_status,item_img,sku</Item>
+    <ItemCats>cid,parent_cid,name,is_parent,status,sort_order</ItemCats>
+    <ItemProps>
+      pid,parent_pid,parent_vid,name,is_key_prop,is_sale_prop,is_color_prop,is_enum_prop,is_input_prop,is_item_prop,must,multi,status,sort_order,child_template,is_allow_alias,
+      prop_values.cid,prop_values.pid,prop_values.prop_name,prop_values.vid,prop_values.name,prop_values.name_alias,prop_values.is_parent,prop_values,status,prop_values.sort_order
+    </ItemProps>
+    <ItemPropsSub>pid,parent_pid,parent_vid,name,is_key_prop,is_sale_prop,is_color_prop,is_enum_prop,is_input_prop,is_item_prop,must,multi,status,sort_order,child_template,is_allow_alias</ItemPropsSub>
+    <ItemPropValues>prop_values.cid,prop_values.pid,prop_values.prop_name,prop_values.vid,prop_values.name,prop_values.name_alias,prop_values.is_parent,prop_values,status,prop_values.sort_order</ItemPropValues>
+  </Fields>
+  <Params>
+    <DeliverySend>
+      <Delivery id="1">
+        <order_type>delivery_needed</order_type>
+        <seller_name>高星星</seller_name>
+        <seller_area_id>110105</seller_area_id>
+        <seller_address>北京市朝阳区豆各庄乡孙家坡村南甲68号圣修储运服务中心11号库</seller_address>
+        <seller_zip>100123</seller_zip>
+        <seller_phone>010-87332596-8024</seller_phone>
+        <seller_mobile>13500000000</seller_mobile>
+        <memo>发货</memo>
+      </Delivery>
+      <Delivery id="2">
+        <order_type>delivery_needed</order_type>
+        <seller_name>于琳琳</seller_name>
+        <seller_area_id>320585</seller_area_id>
+        <seller_address>五洲在线</seller_address>
+        <seller_zip>102613</seller_zip>
+        <seller_phone>0512-53200136</seller_phone>
+        <seller_mobile>13817614576</seller_mobile>
+        <memo>发货</memo>
+      </Delivery>
+    </DeliverySend>
+  </Params>
+  <Constant>
+    <MICKEY>
+      MIIBSgIBADCCASsGByqGSM44BAEwggEeAoGBAOuow+JTuzpP2Vj4i/xELt9EXomc
+      NKYD76+TrfObqqkoiKc8O+uJhy/4s8hpsGlNfeuR5eGmWUYh7jmbWxfC4Hx/bsgD
+      ZCbHObD9sQCISYrDfItKaBNXOE6GEMUFD3+ybKX8orK+Fm5sWDSbBkdMbjoJCk1t
+      +ZLjKGD+aHuKjT4nAhUAlgj+ocOSLEgVIV2605fDfmXZl3kCgYBdbUUaeoTmMT8O
+      zZ1GYRuqrxUBADMVLySKrF0dvOuPLHH7TkV02ku7R3WwdI8F5ODtJR4FDYSu8J2y
+      3pxMEOEB0v9l5hWGBQLyO2wTUD0f83hiXyiXcbae+VH9oDrYuI0cy8ec16uPXxVn
+      EuPUeoMYeXWZFIuuPnwrXLIH9CDJTgQWAhQxuxsFoUzr9i3bOir9EDyxxn38dA==
+    </MICKEY>
+    <WAREHOUSEPROVIDERID>WUZHOU</WAREHOUSEPROVIDERID>
+    <WLBURL>http://esupply.taobao.com/user/wareHouseReceiveMessage.do</WLBURL>
+  </Constant>
+  <!--<response>
+    <totalResults>total_results</totalResults>
+  </response>-->
+</TOPConfig>

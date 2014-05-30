@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2248e3df-3177-4382-bf35-03f3e3edca5a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:33363/DataConsumer.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DataConsumer.xsd" MetadataType="Schema" ID="decf937d-29cb-4da3-9b7b-a978d3c3441f" SourceId="1" SourceUrl="http://localhost:33363/DataConsumer.svc?xsd=xsd0" />
+    <MetadataFile FileName="DataConsumerService.wsdl" MetadataType="Wsdl" ID="32c9e7b8-1826-4f87-aaec-33385aebc54b" SourceId="1" SourceUrl="http://localhost:33363/DataConsumer.svc?wsdl" />
+    <MetadataFile FileName="DataConsumer1.xsd" MetadataType="Schema" ID="392330a8-314c-4326-8c95-f7fcbe72d303" SourceId="1" SourceUrl="http://localhost:33363/DataConsumer.svc?xsd=xsd1" />
+    <MetadataFile FileName="DataConsumer.disco" MetadataType="Disco" ID="d7a1b7d7-26bf-459c-906b-36de9dba45b2" SourceId="1" SourceUrl="http://localhost:33363/DataConsumer.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

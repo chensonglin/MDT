@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CC439D6-4B47-42A7-86ED-ABDB7FD33F8A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MDT.DataConsumer.ServiceImplement</RootNamespace>
+    <AssemblyName>MDT.DataConsumer.ServiceImplement</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\SharedLibrary\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\SharedLibrary\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\SharedLibrary\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\SharedLibrary\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataConsumerService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DataConsumerCenter\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\EmailCenter\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TraceLogCenter\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MDT.DatabaseFactory\MDT.DatabaseFactory.csproj">
+      <Project>{8E37BDDA-B0A7-48C1-A039-F109E5B2D5FF}</Project>
+      <Name>MDT.DatabaseFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDT.DataConsumer.ServiceContract\MDT.DataConsumer.ServiceContract.csproj">
+      <Project>{E9C1DA74-B7DA-4CFB-A7E0-39CB7DB63C50}</Project>
+      <Name>MDT.DataConsumer.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MDT.Utility\MDT.Utility.csproj">
+      <Project>{9CED3F2A-4C8B-4CAB-B98B-08E86963B021}</Project>
+      <Name>MDT.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\MDT.TOP.Utility.TraceLog.TraceLogInfo.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\DataConsumerCenter\DataConsumerCenter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataConsumerCenter\DataConsumerCenter1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataConsumerCenter\DataConsumerCenter2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataConsumerCenter\DataConsumerCenterService.wsdl" />
+    <None Include="Service References\DataConsumerCenter\MDT.DataConsumer.ServiceImplement.DataConsumerCenter.Source.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EmailCenter\EmailCenter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailCenter\EmailCenter1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailCenter\EmailCenterService.wsdl" />
+    <None Include="Service References\TraceLogCenter\MDT.DataConsumer.ServiceImplement.TraceLogCenter.TraceLogInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TraceLogCenter\TraceLogCenter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TraceLogCenter\TraceLogCenter1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TraceLogCenter\TraceLogCenter2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TraceLogCenter\TraceLogCenterService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataConsumerCenter\" />
+    <WCFMetadataStorage Include="Service References\EmailCenter\" />
+    <WCFMetadataStorage Include="Service References\TraceLogCenter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailCenter\EmailCenter.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailCenter\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailCenter\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailCenter\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataConsumerCenter\DataConsumerCenter.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataConsumerCenter\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataConsumerCenter\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataConsumerCenter\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TraceLogCenter\TraceLogCenter.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TraceLogCenter\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TraceLogCenter\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TraceLogCenter\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Service="MDT.ManageCenter.ServiceImplement.ManageCenterService" %>

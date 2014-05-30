@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Companys>
+  <Company>
+    <CompanyID>0004</CompanyID>
+    <CompanyName>EMS</CompanyName>
+    <Regex>^[A-Z]{2}[0-9]{9}[A-Z]{2}$</Regex>
+  </Company>
+  <Company>
+    <CompanyID>0533</CompanyID>
+    <CompanyName>五洲在线</CompanyName>
+    <Regex>^[0-9]{10}$</Regex>
+  </Company>
+  <Company>
+    <CompanyID>0164</CompanyID>
+    <CompanyName>顺丰速运</CompanyName>
+    <Regex>^[0-9]{12}$</Regex>
+  </Company>
+</Companys>

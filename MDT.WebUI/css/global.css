@@ -1,0 +1,876 @@
+﻿
+html, body
+{
+    font-family: Arial, Helvetica, "宋体" ,sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #FFF;
+    font-size: 12px;
+    color: #000;
+}
+div, form, img, ul, ol, li, dl, dt, dd, input, button
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+li
+{
+    list-style-type: none;
+}
+img
+{
+    vertical-align: top;
+}
+strong
+{
+    font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6
+{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+}
+input
+{
+    font-size: 12px;
+}
+table
+{
+    text-align: center;
+}
+form
+{
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+/*em标签斜体重置为正常*/
+em
+{
+    font-style: normal;
+}
+
+.clearBoth
+{
+    clear: both;
+}
+/*字体加粗*/
+.fontBold
+{
+    font-weight: bold;
+}
+.fontNor
+{
+    font-weight: normal;
+}
+.clear
+{
+    clear: both;
+}
+
+/*a链接*/
+a
+{
+    color: #065c95;
+    margin-right: 5px;
+}
+a:link, a:visited, a:active
+{
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+a
+{
+    cursor: pointer;
+}
+
+/*图标*/
+.icon
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 18px;
+    background: url(../images/icons.png) no-repeat;
+}
+.iconUser
+{
+    background-position: 0 0;
+}
+.iconHelp
+{
+    background-position: 0 -24px;
+}
+.iconLocation
+{
+    background-position: 0 -48px;
+}
+.iconCross
+{
+    background-position: 0 -72px;
+}
+
+.oddTr
+{
+    background-color: #F3FAFA;
+}
+/*表格单行高亮色 #F0FAFA #F3FAFA #F7FAFA #eef7ff */
+/*cfl 定义样式     在日志管理的 错误行引用该样式*/
+.cflLogFailedTr
+{
+    background: #F9BBB2;
+}
+/* cfl 定义样式  在任务分配页面 已选择任务行的样式*/
+.cflAllotTask
+{
+    background: #E5F8D2;
+}
+.greenTR
+{
+    background: #EFFBE4;
+}
+
+.hoverTr
+{
+    background: #D7E9FD;
+}
+/*鼠标经过表格行高亮色 #D7E9FD */
+.clickTr
+{
+    background: #FED38E;
+}
+/*鼠标点击表格行高亮色 #FDB034 #f4ac8e
+
+/*自适应按钮button*/
+button::-moz-focus-inner
+{
+    padding: 0 !important;
+    border: 0 none !important;
+}
+.btn
+{
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    overflow: visible;
+    text-align: center;
+    white-space: nowrap;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+    overflow: visible;
+    margin-right: 5px;
+}
+.btn span, .btn em
+{
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    margin: 0;
+}
+.btn span
+{
+    padding-left: 20px;
+    background: url(../images/btn.gif) no-repeat left top;
+}
+.btn em
+{
+    font-style: normal;
+    padding-right: 20px;
+    background: url(../images/btn.gif) no-repeat right top;
+}
+
+.btnOver
+{
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    overflow: visible;
+    text-align: center;
+    white-space: nowrap;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.btnOver span, em
+{
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    margin: 0;
+}
+.btnOver span
+{
+    padding-left: 20px;
+    background: url(../images/btn.gif) no-repeat left bottom;
+}
+.btnOver em
+{
+    font-style: normal;
+    padding-right: 20px;
+    background: url(../images/btn.gif) no-repeat right bottom;
+}
+
+
+/*a自适应伪按钮button*/
+.aBtn
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    display: inline-block;
+    background: none;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    text-align: center;
+    white-space: nowrap;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+    overflow: visible;
+    color: #000;
+}
+.aBtn span, em
+{
+    display: block;
+    _width: 0;
+    height: 23px;
+    line-height: 23px;
+    margin: 0;
+}
+.aBtn span
+{
+    padding-left: 20px;
+    background: url(../images/btn.gif) no-repeat left top;
+}
+.aBtn em
+{
+    font-style: normal;
+    padding-right: 20px;
+    background: url(../images/btn.gif) no-repeat right top;
+}
+.aBtn:active, .aBtn:hover
+{
+    text-decoration: none;
+}
+.aBtnOver
+{
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    overflow: visible;
+    text-align: center;
+    white-space: nowrap;
+    height: 23px;
+    line-height: 23px;
+    color: #000;
+    cursor: pointer;
+}
+.aBtnOver span, em
+{
+    display: block;
+    _width: 0;
+    height: 23px;
+    line-height: 23px;
+    margin: 0;
+}
+.aBtnOver span
+{
+    padding-left: 20px;
+    background: url(../images/btn.gif) no-repeat left bottom;
+}
+.aBtnOver em
+{
+    font-style: normal;
+    padding-right: 20px;
+    background: url(../images/btn.gif) no-repeat right bottom;
+}
+.aBtnOver:active, .aBtnOver:hover
+{
+    text-decoration: none;
+}
+/*a自适应伪按钮button结束*/
+.btnTeoWords
+{
+    background: url(../images/btnTwoWords.gif);
+    width: 54px;
+    height: 23px;
+    padding: 5px;
+}
+.btnTwoWordsOver
+{
+    background: url(../images/btnTwoWordsOver.gif);
+    width: 54px;
+    height: 23px;
+    padding: 5px;
+}
+
+/*文本域样式*/
+/*44 26 14 10为最多输入字符数目，psw为密码，ver为验证码*/
+.fileField, .textField60, .textFieldFull, .textField, .textField30, .textField44, .textField26, .textField14, .textField10, .textField2, .textField220, .textField260, .textField276
+{
+    height: 21px;
+    line-height: 21px;
+    padding: 0;
+    border: solid #7D98B3 1px;
+    background-color: #F6FAE9;
+    font-size: 12px;
+}
+.textSelect220, .textSelect260
+{
+    height: 21px;
+    line-height: 21px;
+    padding: 0;
+    border: solid #7D98B3 1px;
+    background-color: #F6FAE9;
+    font-size: 12px;
+}
+.textField60
+{
+    width: 60px;
+}
+.textFieldFull
+{
+    width: 100%;
+}
+
+.fileFieldDate
+{
+    width: 100px;
+    height: 21px;
+    line-height: 18px;
+    padding: 0;
+    border: solid #7D98B3 1px;
+    background-color: #F6FAE9;
+    font-size: 12px;
+}
+
+.textField30
+{
+    width: 370px;
+}
+.textField44
+{
+    width: 280px;
+}
+.textField26
+{
+    width: 180px;
+}
+.textField14
+{
+    width: 110px;
+}
+.textField10
+{
+    width: 78px;
+}
+.textField2
+{
+    width: 40px;
+}
+.textFieldPsw
+{
+    width: 180px;
+    height: 25px;
+    border: solid #7D98B3 1px;
+    background-color: #F6FAE9;
+    font-size: 12px;
+}
+.textField220
+{
+    width: 220px;
+}
+.textSelect220
+{
+    width: 200px;
+}
+.textField260
+{
+    width: 260px;
+}
+.textSelect260
+{
+    width: 240px;
+}
+.textField276
+{
+    width: 280px;
+}
+.textFieldVer
+{
+    width: 90px;
+    height: 21px;
+    padding: 0;
+    border: solid #7D98B3 1px;
+    background-color: #F6FAE9;
+    font-size: 12px;
+}
+.textarea
+{
+    line-height: 16px;
+    vertical-align: text-top;
+    border: solid #7D98B3 1px;
+    background-color: #F6FAE9;
+    font-family: Arial, Helvetica, "宋体" ,sans-serif;
+    font-size: 12px;
+}
+.textarea370
+{
+    width: 377px;
+    height: 54px;
+}
+.textarea400
+{
+    width: 400px;
+    height: 85px;
+}
+.textarea552
+{
+    width: 552px;
+    height: 112px;
+}
+.textarea564
+{
+    width: 564px;
+    height: 112px;
+}
+/*下拉框样式*/
+.select
+{
+    height: 23px; /*select实际高度不包括边框*/
+    border: solid #7D98B3 1px;
+    background-color: #F6FAE9;
+}
+/*宽度*/
+.width100
+{
+    width: 100%;
+}
+/*外边距*/
+.mt0
+{
+    margin-top: 0;
+}
+.mt5
+{
+    margin-top: 5px;
+}
+.mt10
+{
+    margin-top: 10px;
+}
+.mt20
+{
+    margin-top: 20px;
+}
+
+.mr5
+{
+    margin-right: 5px;
+}
+.mr10
+{
+    margin-right: 10px;
+}
+.mr15
+{
+    padding-right: 15px;
+}
+.mr20
+{
+    margin-right: 20px;
+}
+
+.ml5
+{
+    margin-left: 5px;
+}
+.ml10
+{
+    margin-left: 10px;
+}
+.ml15
+{
+    margin-left: 15px;
+}
+.ml20
+{
+    margin-left: 20px;
+}
+.ml45
+{
+    margin-left: 45px;
+}
+
+.mb5
+{
+    margin-bottom: 5px;
+}
+.mb10
+{
+    margin-bottom: 10px;
+}
+.mb15
+{
+    margin-bottom: 15px;
+}
+.mb20
+{
+    margin-bottom: 20px;
+}
+/*内边距*/
+.pt5
+{
+    padding-top: 5px;
+}
+.pt10
+{
+    padding-top: 10px;
+}
+
+.pr5
+{
+    padding-right: 5px;
+}
+.pr10
+{
+    padding-right: 10px;
+}
+
+.pl5
+{
+    padding-left: 5px;
+}
+.pl10
+{
+    padding-left: 10px;
+}
+
+.pl15
+{
+    padding-left: 15px;
+}
+.pb10
+{
+    padding-bottom: 10px;
+}
+/*显示*/
+.hide
+{
+    display: none;
+}
+.disBlock
+{
+    display: block;
+}
+.disInline
+{
+    display: inline;
+}
+.disInBlock
+{
+    display: inline-block;
+}
+/*水平居中*/
+.hCenter
+{
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*宽度*/
+.widthAuto
+{
+    width: auto;
+}
+/*高度*/
+.heightAuto
+{
+    height: auto;
+}
+.fZ12
+{
+    font-size: 12px;
+}
+.fz14
+{
+    font-size: 14px;
+}
+
+/*cfl自定义按钮样式   使按钮透明*/
+.cflBtn
+{
+    display: inline-block;
+    border: none;
+    background: none;
+    overflow: visible;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/*cfl自定义按钮样式   使按钮透明*/
+.cflBtn
+{
+    display: inline-block;
+    border: none;
+    background: none;
+    overflow: visible;
+    text-align: center;
+    margin-top: 5px;
+}
+/*cfl 定义样式   用于任务配置 新增任务中的textarea */
+.cflTextarea
+{
+    line-height: 16px;
+    vertical-align: text-top;
+    width: 400px;
+    height: 85px;
+    border: solid #7D98B3 1px;
+    background-color: White;
+    font-family: Arial, Helvetica, "宋体" ,sans-serif;
+    font-size: 12px;
+}
+/*cfl 定义样式   用于任务配置 新增任务中的texBox */
+.cflFileField
+{
+    height: 21px;
+    padding: 0;
+    border: solid #7D98B3 1px;
+    background-color: White; /* line-height: 23px; */
+    font-family: Arial, Helvetica, "宋体" ,sans-serif;
+    font-size: 12px;
+}
+.cflA
+{
+    background-color: White; /*#F3FAFA  #F5FAFF*/
+    font-size: 14px;
+    color: Black;
+    text-decoration: none;
+}
+.cflA2
+{
+    background-color: #FEBE67; /* #FFAD3F  #FFB858 #FFC578*/
+    font-size: 14px;
+    color: Black;
+    text-decoration: none;
+}
+.cflAclick
+{
+    background-color: #FEBE67; /* #FFAD3F  #FFB858 #FFC578*/
+    font-size: 14px;
+    color: Black;
+    text-decoration: none;
+}
+.cflA:hover
+{
+    background-color: #FEE69E; /*#FFE7A2  #FEE89D  #FFBC67*/
+    font-size: 14px;
+    color: Black;
+    text-decoration: none;
+}
+
+.liA12
+{
+    background-color: White; /*#F3FAFA  #F5FAFF*/
+    font-size: 12px;
+    color: Black;
+    text-decoration: none;
+    height: 18px;
+}
+.liA12On
+{
+    background-color: #FEBE67; /* #FFAD3F  #FFB858 #FFC578*/
+    font-size: 12px;
+    color: Black;
+    text-decoration: none;
+}
+.liA12:hover
+{
+    background-color: #FEE69E; /*#FFE7A2  #FEE89D  #FFBC67*/
+    font-size: 12px;
+    color: Black;
+    text-decoration: none;
+}
+
+.likeButton
+{
+    background-color: #F1FAFD; /*#FEE69E #F1FAFD*/
+    border: 1px solid #A3C0E8; /*#FEBE67  #A3C0E8 */
+    font-size: 12px;
+    color: Black;
+    text-decoration: none;
+}
+#hidebg
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #5E5E5E; /*#B4BFD1 #BFBFBF #727272  444444   343434 5E5E5E*/
+    width: 100%; /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+    filter: alpha(opacity=40); /*设置透明度为60%*/
+    opacity: 0.4; /*非IE浏览器下设置透明度为60%*/
+    display: none;
+    z-index: 2;
+}
+
+.openDiv
+{
+    position: absolute;
+    background-color: #fff;
+    display: none;
+    cursor: pointer;
+    z-index: 3; /*border:1px solid #94B9E2; /*#CBCBCB*/
+}
+.columnContent
+{
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+    background: #fff;
+}
+/*border-left:2px solid #A3C0E8;border-right:2px solid #A3C0E8;border-bottom:2px solid #A3C0E8;*/
+.columnContent2
+{
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+    background: #fff;
+    border-left: 1px solid #D8D8D8;
+    border-right: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
+}
+.columnTitle
+{
+    width: 100%;
+    height: 28px;
+    background: url(/images/bg_dbt.jpg) no-repeat left;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    border-bottom: 1px solid #d8d8d8;
+}
+.columnTitle2
+{
+    width: 100%;
+    height: 28px;
+    background: url(/images/bg_dbt2.jpg) no-repeat left;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    border-bottom: 1px solid #d8d8d8;
+}
+.columnTitle_t
+{
+    float: left;
+    width: 200px;
+    line-height: 150%;
+    font-weight: bold;
+    font-size: 13px;
+    color: #333333;
+    margin: 5px 0px 0px 20px !important;
+    margin: 5px 0px 0px 10px;
+    text-align: left;
+}
+/*.columnTitle_t{float:left;width:200px;line-height:150%;font-weight:bold;font-size:13px;color:#333333;margin:5px 0px 0px 20px !important; margin:5px 0px 0px 20px; text-align:left;}*/
+.columnTitle_r
+{
+    float: right;
+    width: 30px;
+    text-align: right;
+    color: #0769b8;
+    margin: 5px 5px 0px 0px;
+}
+
+.iconList
+{
+    width: 20px;
+    background: url(/images/icon2.jpg) no-repeat 0px 2px;
+    height: 24px;
+    padding: 0px 0px 0px 13px;
+    margin: 0px 0px 0px 3px;
+}
+
+.fl
+{
+    float: left;
+}
+.fr
+{
+    float: right;
+}
+.modalInfor
+{
+    left: 50%;
+    overflow: hidden;
+    position: fixed;
+    top: 17%;
+}
+* html .modalInfor
+{
+    position: absolute;
+}
+.modalHeader
+{
+    height: 24px;
+    line-height: 24px;
+}
+.modalClose
+{
+    width: 29px;
+    height: 24px;
+    background: url(/images/closeWindow.GIF) left center no-repeat;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.modalBody
+{
+    overflow-y: hidden;
+    height: auto !important;
+    background-color: #fff;
+}
+.modalContent
+{
+    padding: 10px;
+}
+.modalHeader
+{
+    color: #383736;
+    background: url("/images/modalHeader.png") no-repeat scroll right 0 transparent;
+}
+.modalHeader b
+{
+    background: url("/images/modalHeader.png") no-repeat scroll left 0 transparent;
+}
+.modalClose
+{
+    background: url(/images/modalClose.gif) left top no-repeat;
+}
+.modalClose:hover
+{
+    background: url(/images/modalClose.gif) left bottom no-repeat;
+}
+.modalBody
+{
+    border: 1px solid #A3C0E8;
+}
+/*#92B8E2  5f82a9*/
+
+

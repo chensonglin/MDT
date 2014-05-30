@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MDT.ManageCenter.DataContract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MDT.ManageCenter.DataContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6668/DataConsumerCenter.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Source">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MainTasks" nillable="true" type="tns:ArrayOfTaskUnit" />
+      <xs:element minOccurs="0" name="PostTasks" nillable="true" type="tns:ArrayOfTaskUnit" />
+      <xs:element minOccurs="0" name="Results" nillable="true" type="tns:ArrayOfResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Source" nillable="true" type="tns:Source" />
+  <xs:complexType name="ArrayOfTaskUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskUnit" nillable="true" type="tns:TaskUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskUnit" nillable="true" type="tns:ArrayOfTaskUnit" />
+  <xs:complexType name="TaskUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Commands" nillable="true" type="tns:ArrayOfECommand" />
+      <xs:element minOccurs="0" name="HasTraceLog" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasTransaction" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskUnit" nillable="true" type="tns:TaskUnit" />
+  <xs:complexType name="ArrayOfECommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ECommand" nillable="true" type="tns:ECommand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfECommand" nillable="true" type="tns:ArrayOfECommand" />
+  <xs:complexType name="ECommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommandName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommandText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommandType" type="tns:ECommandType" />
+      <xs:element minOccurs="0" name="HasResult" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ParameterValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterValueFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParameterValueOjbectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfEParameter" />
+      <xs:element minOccurs="0" name="SourceLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceType" type="tns:SourceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ECommand" nillable="true" type="tns:ECommand" />
+  <xs:simpleType name="ECommandType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="TableDirect" />
+      <xs:enumeration value="StoredProcedure" />
+      <xs:enumeration value="Get" />
+      <xs:enumeration value="Post" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ECommandType" nillable="true" type="tns:ECommandType" />
+  <xs:complexType name="ArrayOfEParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EParameter" nillable="true" type="tns:EParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEParameter" nillable="true" type="tns:ArrayOfEParameter" />
+  <xs:complexType name="EParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EParameter" nillable="true" type="tns:EParameter" />
+  <xs:simpleType name="SourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SqlServer">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Oracle">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MySql">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DB2">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sybase">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Http">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tcp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DLL">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SourceType" nillable="true" type="tns:SourceType" />
+  <xs:complexType name="ArrayOfResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="tns:Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResult" nillable="true" type="tns:ArrayOfResult" />
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommandName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XmlPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueFromField" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubXmlPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Result" nillable="true" type="tns:Result" />
+</xs:schema>

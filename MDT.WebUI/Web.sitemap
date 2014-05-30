@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="首页"  description="" >
+    <siteMapNode url="/Management/Log/LogMasterBrowser.aspx" title="日志管理"  description="" >
+      <siteMapNode url="/Management/Log/LogMasterProcessMsg.aspx" title="查看执行过程"  description="" />
+     </siteMapNode>
+    <siteMapNode url="/Management/Log/LogViewer.aspx" title="日志管理"  description="" >
+       
+    </siteMapNode>
+    <!--<siteMapNode url="" title=""  description="" />
+        <siteMapNode url="" title=""  description="" />-->
+    <siteMapNode url="/Management/Configuration/Database/DatabaseBrowser.aspx" title="数据库管理"  description="" />
+
+    <siteMapNode url="/Management/Configuration/Task/TaskBrowser.aspx" title="任务管理"  description="" >
+      <siteMapNode url="/Management/Configuration/Task/TaskAdd.aspx" title="任务配置"  description="" />
+      <siteMapNode url="/Management/Notice/NoticeAllocate.aspx" title="预警设置"  description="" >
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode url="/Management/Configuration/Assignment/TaskAssignment.aspx" title="任务分配"  description="" />
+    <siteMapNode url="/Management/OrderManage/OrderList.aspx" title="订单管理" description=""></siteMapNode>
+
+    <siteMapNode url="/Management/OAuth/Default.aspx" title="OAuth申请" description=""></siteMapNode>
+    
+    <siteMapNode url="/Management/TaskMove/TaskMove.aspx" title="任务迁移" description=""></siteMapNode>
+    
+  </siteMapNode>
+</siteMap>

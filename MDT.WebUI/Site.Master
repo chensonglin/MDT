@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MDT.WebUI.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五洲在线数据交换平台MDT</title>
+    <link href="/css/global.css" rel="stylesheet" type="text/css" />
+    <link href="/css/layout.css" rel="stylesheet" type="text/css" />
+   <script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/js/mic.main.js"></script>
+    <script type="text/javascript" src="/js/trHighLight.js"></script>
+    <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js" charset="gb2312"></script>
+     <script type="text/javascript" src="/js/OpenWindow.js"></script>
+     <script type="text/javascript" src="/js/jQuery.PromptInputSelect.js"></script>
+     <script src="/js/jQuery.CustomSelect.js" type="text/javascript"></script>
+     <script src="/js/JQuery.LargeAndFastSelect.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+        <!--页内脚本开始-->
+     <script type="text/javascript">
+         $(function () {
+             $('#dataTable').trOddHilight();
+             $('#dataTable').trClick();
+         })
+         $(function () {
+             $('.dataTable').trOddHilight();
+             $('.dataTable').trClick();
+         })
+
+         function aHref(url) {
+             window.location.href = url;
+         }
+</script>
+<!--页内脚本结束-->
+</head>
+<body>
+    <form runat="server">
+    
+    <div id="header">
+	<div id="logo">
+  	 <a href="#">五洲在线数据交换平台MDT</a>
+  	</div>
+	<ul id="navTab">
+        <li><a id="li1" href="javascript:aHref('/Management/Log/LogMasterBrowser.aspx');">日志管理</a></li>
+        <li><a id="li2" href="javascript:aHref('/Management/Configuration/Database/DatabaseBrowser.aspx');">数据库管理</a></li>
+        <li><a id="li3" href="javascript:aHref('/Management/Configuration/Task/TaskBrowser.aspx');">任务管理</a></li>
+        <li><a id="li4" href="javascript:aHref('/Management/Configuration/Assignment/TaskAssignment.aspx');">任务分配</a></li>
+        <li><a id="li5" href="javascript:aHref('/Management/OrderManage/OrderList.aspx');">订单管理</a></li>
+        <li><a id="li6" href="javascript:aHref('/Management/OAuth/Default.aspx');">OAuth申请</a></li>
+        <%--<li><a id="li6" href="javascript:aHref('/Management/TaskMove/TaskMove.aspx');">任务迁移</a></li>--%>
+    </ul>
+     
+<script type="text/javascript">
+//此部分脚本用于控制菜单点击后显示橙色背景图片
+    function showCurrentMenu() {
+        var pageUrl = "";
+        pageUrl = window.location;
+        pageUrl = pageUrl.toString()
+        var index = pageUrl.lastIndexOf("/");
+        var strPage = pageUrl.substring(index + 1, pageUrl.length);
+        if (strPage == "LogMasterBrowser.aspx") {
+            var liA = document.getElementById("li1");
+            liA.className = "on";
+        }
+        else if (strPage == "DatabaseBrowser.aspx") {
+            var liA = document.getElementById("li2");
+            liA.className = "on";
+        }
+        else if (strPage == "TaskBrowser.aspx" || strPage == "NoticeAllocate.aspx") {
+            var liA = document.getElementById("li3");
+            liA.className = "on";
+        }
+        else if (strPage == "TaskAssignment.aspx") {
+            var liA = document.getElementById("li4");
+            liA.className = "on";
+        }
+        else if (strPage == "OrderList.aspx") {
+            var liA = document.getElementById("li5");
+            liA.className = "on";
+        }
+        else if (strPage == "TaskMove.aspx") {
+            var liA = document.getElementById("li6");
+            liA.className = "on";
+        }
+    }
+    showCurrentMenu();
+</script>
+    <div id="user">
+       <span class="icon iconUser mr5"></span><span>您好， <%=ViewState["userName"].ToString()%>!</span>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+       <asp:LinkButton ID="lbtnLogin" runat="server" onclick="lbtnExit_Click">登录</asp:LinkButton>
+       <asp:LinkButton ID="lbtnExit" runat="server" onclick="lbtnExit_Click">注销</asp:LinkButton>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+  </div>
+
+  <div id="content">
+	<div class="cflicon cfliconLocation" id="crumbs" align="left"> 
+    当前位置&nbsp;&nbsp;  
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server" >
+        </asp:SiteMapPath>
+    </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+    </div>   
+        <div class="clear">
+        </div>
+    
+    <div id="fooder">
+<div id="copyright"> &copy;2010五洲在线电子商务 -<a href="#">条款</a>-<a href="#">隐私权政策</a>-<a onclick="window.open('http://www.mic.cn')">www.mic.cn</a> </div>
+</div>
+    
+    </form>
+</body>
+</html>

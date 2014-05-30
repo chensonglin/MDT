@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ManageCenterDBModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ManageCenterDBModelStoreContainer">
+          <EntitySet Name="eclient" EntityType="ManageCenterDBModel.Store.eclient" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="erole" EntityType="ManageCenterDBModel.Store.erole" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="eschema" EntityType="ManageCenterDBModel.Store.eschema" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="esource" EntityType="ManageCenterDBModel.Store.esource" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="esourcebaseinfo" EntityType="ManageCenterDBModel.Store.esourcebaseinfo" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="etask" EntityType="ManageCenterDBModel.Store.etask" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="etaskallocation" EntityType="ManageCenterDBModel.Store.etaskallocation" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="euser" EntityType="ManageCenterDBModel.Store.euser" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="euserrole" EntityType="ManageCenterDBModel.Store.euserrole" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="noticeallocate" EntityType="ManageCenterDBModel.Store.noticeallocate" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="noticereceiver" EntityType="ManageCenterDBModel.Store.noticereceiver" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="tracelog" EntityType="ManageCenterDBModel.Store.tracelog" store:Type="Tables" Schema="mdt" />
+          <EntitySet Name="tracelogmaster" EntityType="ManageCenterDBModel.Store.tracelogmaster" store:Type="Tables" Schema="mdt" />
+        </EntityContainer>
+        <EntityType Name="eclient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ServerIP" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="erole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleType" Type="int" />
+          <Property Name="RoleDesc" Type="text" />
+        </EntityType>
+        <EntityType Name="eschema">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ESource_ID" Type="int" Nullable="false" />
+          <Property Name="Schema" Type="longtext" />
+          <Property Name="Type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="esource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ESourceBaseInfo_ID" Type="int" Nullable="false" />
+          <Property Name="SourceConfig" Type="longtext" />
+          <Property Name="SourceType" Type="varchar" MaxLength="50" />
+          <Property Name="OriginalConfig" Type="longtext" />
+        </EntityType>
+        <EntityType Name="esourcebaseinfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Config" Type="longtext" />
+          <Property Name="AliasName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="etask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SourceESchema_ID" Type="int" Nullable="false" />
+          <Property Name="TargetESchema_ID" Type="int" Nullable="false" />
+          <Property Name="TaskName" Type="varchar" MaxLength="50" />
+          <Property Name="XSLTInfo" Type="longtext" />
+          <Property Name="Mapping" Type="longtext" />
+          <Property Name="Enable" Type="bit" Nullable="false" />
+          <Property Name="Note" Type="text" />
+          <Property Name="Interval" Type="int" Nullable="false" />
+          <Property Name="OperationID" Type="int" Nullable="false" />
+          <Property Name="OperationDate" Type="datetime" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="5" />
+          <Property Name="Category" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="etaskallocation">
+          <Key>
+            <PropertyRef Name="ETask_ID" />
+          </Key>
+          <Property Name="ETask_ID" Type="int" Nullable="false" />
+          <Property Name="EClient_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="euser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="80" />
+          <Property Name="UserEmail" Type="varchar" MaxLength="30" />
+          <Property Name="LoginTime" Type="datetime" />
+          <Property Name="LoginIP" Type="varchar" MaxLength="40" />
+          <Property Name="UserType" Type="char" MaxLength="3" />
+          <Property Name="HostName" Type="varchar" MaxLength="50" />
+          <Property Name="MacAddress" Type="varchar" MaxLength="18" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="NoWebLastVisitTime" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="40" />
+          <Property Name="IsLocked" Type="char" MaxLength="1" />
+          <Property Name="NoWebVisitIP" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="euserrole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="noticeallocate">
+          <Key>
+            <PropertyRef Name="nid" />
+          </Key>
+          <Property Name="nid" Type="int" Nullable="false" />
+          <Property Name="etaskId" Type="int" />
+          <Property Name="noticeMode" Type="int" />
+          <Property Name="receiverID" Type="int" />
+          <Property Name="enable" Type="int" />
+        </EntityType>
+        <EntityType Name="noticereceiver">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" />
+          <Property Name="phone" Type="varchar" MaxLength="15" />
+          <Property Name="email" Type="varchar" MaxLength="30" />
+          <Property Name="enable" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tracelog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ETask_ID" Type="int" Nullable="false" />
+          <Property Name="SubTask_ID" Type="int" />
+          <Property Name="TraceLogMaster_ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Stage" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="Data" Type="longtext" />
+          <Property Name="RunInfo" Type="longtext" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tracelogmaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ETask_ID" Type="int" Nullable="false" />
+          <Property Name="DataCount" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="Note" Type="text" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ManageCenterDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ManageCenterDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="eclient" EntityType="ManageCenterDBModel.EClient" />
+          <EntitySet Name="eschema" EntityType="ManageCenterDBModel.ESchema" />
+          <EntitySet Name="esource" EntityType="ManageCenterDBModel.ESource" />
+          <EntitySet Name="esourcebaseinfo" EntityType="ManageCenterDBModel.ESourceBaseInfo" />
+          <EntitySet Name="etask" EntityType="ManageCenterDBModel.ETask" />
+          <EntitySet Name="etaskallocation" EntityType="ManageCenterDBModel.ETaskAllocation" />
+          <EntitySet Name="euser" EntityType="ManageCenterDBModel.EUser" />
+          <EntitySet Name="noticeallocate" EntityType="ManageCenterDBModel.NoticeAllocate" />
+          <EntitySet Name="noticereceiver" EntityType="ManageCenterDBModel.NoticeReceiver" />
+          <EntitySet Name="tracelog" EntityType="ManageCenterDBModel.TraceLog" />
+          <EntitySet Name="tracelogmaster" EntityType="ManageCenterDBModel.TraceLogMaster" />
+          <AssociationSet Name="EClientETaskAllocation" Association="ManageCenterDBModel.EClientETaskAllocation">
+            <End Role="EClient" EntitySet="eclient" />
+            <End Role="ETaskAllocation" EntitySet="etaskallocation" />
+          </AssociationSet>
+          <AssociationSet Name="ETaskETaskAllocation" Association="ManageCenterDBModel.ETaskETaskAllocation">
+            <End Role="ETask" EntitySet="etask" />
+            <End Role="ETaskAllocation" EntitySet="etaskallocation" />
+          </AssociationSet>
+          <AssociationSet Name="ESourceBaseInfoESource" Association="ManageCenterDBModel.ESourceBaseInfoESource">
+            <End Role="ESourceBaseInfo" EntitySet="esourcebaseinfo" />
+            <End Role="ESource" EntitySet="esource" />
+          </AssociationSet>
+          <AssociationSet Name="ESourceESchema" Association="ManageCenterDBModel.ESourceESchema">
+            <End Role="ESource" EntitySet="esource" />
+            <End Role="ESchema" EntitySet="eschema" />
+          </AssociationSet>
+          <AssociationSet Name="ESchemaETask" Association="ManageCenterDBModel.ESchemaETask">
+            <End Role="ESchema" EntitySet="eschema" />
+            <End Role="ETask" EntitySet="etask" />
+          </AssociationSet>
+          <AssociationSet Name="EUserETask" Association="ManageCenterDBModel.EUserETask">
+            <End Role="EUser" EntitySet="euser" />
+            <End Role="ETask" EntitySet="etask" />
+          </AssociationSet>
+          <AssociationSet Name="TraceLogMasterTraceLog" Association="ManageCenterDBModel.TraceLogMasterTraceLog">
+            <End Role="TraceLogMaster" EntitySet="tracelogmaster" />
+            <End Role="TraceLog" EntitySet="tracelog" />
+          </AssociationSet>
+          <AssociationSet Name="ESchemaETask1" Association="ManageCenterDBModel.ESchemaETask1">
+            <End Role="ESchema" EntitySet="eschema" />
+            <End Role="ETask" EntitySet="etask" />
+          </AssociationSet>
+          <AssociationSet Name="ETaskTraceLogMaster" Association="ManageCenterDBModel.ETaskTraceLogMaster">
+            <End Role="ETask" EntitySet="etask" />
+            <End Role="TraceLogMaster" EntitySet="tracelogmaster" />
+          </AssociationSet>
+          <AssociationSet Name="ETaskTraceLog" Association="ManageCenterDBModel.ETaskTraceLog">
+            <End Role="ETask" EntitySet="etask" />
+            <End Role="TraceLog" EntitySet="tracelog" />
+          </AssociationSet>
+          <EntitySet Name="erole" EntityType="ManageCenterDBModel.ERole" />
+          <EntitySet Name="euserrole" EntityType="ManageCenterDBModel.EUserRole" />
+          <AssociationSet Name="EUserEUserRole" Association="ManageCenterDBModel.EUserEUserRole">
+            <End Role="EUser" EntitySet="euser" />
+            <End Role="EUserRole" EntitySet="euserrole" />
+          </AssociationSet>
+          <AssociationSet Name="ERoleEUserRole" Association="ManageCenterDBModel.ERoleEUserRole">
+            <End Role="ERole" EntitySet="erole" />
+            <End Role="EUserRole" EntitySet="euserrole" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="EClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="ServerIP" Type="String" Nullable="false" />
+          <NavigationProperty Name="ETaskAllocation" Relationship="ManageCenterDBModel.EClientETaskAllocation" FromRole="EClient" ToRole="ETaskAllocation" />
+        </EntityType>
+        <EntityType Name="ESchema">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ESource_ID" Type="Int32" Nullable="false" />
+          <Property Name="Schema" Type="String" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ESource" Relationship="ManageCenterDBModel.ESourceESchema" FromRole="ESchema" ToRole="ESource" />
+          <NavigationProperty Name="SourceETask" Relationship="ManageCenterDBModel.ESchemaETask" FromRole="ESchema" ToRole="ETask" />
+          <NavigationProperty Name="TargetETask" Relationship="ManageCenterDBModel.ESchemaETask1" FromRole="ESchema" ToRole="ETask" />
+        </EntityType>
+        <EntityType Name="ESource">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ESourceBaseInfo_ID" Type="Int32" Nullable="false" />
+          <Property Name="SourceConfig" Type="String" />
+          <Property Name="SourceType" Type="String" />
+          <Property Name="OriginalConfig" Type="String" />
+          <NavigationProperty Name="ESourceBaseInfo" Relationship="ManageCenterDBModel.ESourceBaseInfoESource" FromRole="ESource" ToRole="ESourceBaseInfo" />
+          <NavigationProperty Name="ESchema" Relationship="ManageCenterDBModel.ESourceESchema" FromRole="ESource" ToRole="ESchema" />
+        </EntityType>
+        <EntityType Name="ESourceBaseInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Config" Type="String" />
+          <Property Name="AliasName" Type="String" />
+          <NavigationProperty Name="ESource" Relationship="ManageCenterDBModel.ESourceBaseInfoESource" FromRole="ESourceBaseInfo" ToRole="ESource" />
+        </EntityType>
+        <EntityType Name="ETask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SourceESchema_ID" Type="Int32" Nullable="false" />
+          <Property Name="TargetESchema_ID" Type="Int32" Nullable="false" />
+          <Property Name="TaskName" Type="String" />
+          <Property Name="XSLTInfo" Type="String" />
+          <Property Name="Mapping" Type="String" />
+          <Property Name="Enable" Type="Boolean" Nullable="false" />
+          <Property Name="Note" Type="String" />
+          <Property Name="Interval" Type="Int32" Nullable="false" />
+          <Property Name="OperationID" Type="Int32" Nullable="false" />
+          <Property Name="OperationDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="ETaskAllocation" Relationship="ManageCenterDBModel.ETaskETaskAllocation" FromRole="ETask" ToRole="ETaskAllocation" />
+          <NavigationProperty Name="SourceESchema" Relationship="ManageCenterDBModel.ESchemaETask" FromRole="ETask" ToRole="ESchema" />
+          <NavigationProperty Name="EUser" Relationship="ManageCenterDBModel.EUserETask" FromRole="ETask" ToRole="EUser" />
+          <NavigationProperty Name="TargetESchema" Relationship="ManageCenterDBModel.ESchemaETask1" FromRole="ETask" ToRole="ESchema" />
+          <NavigationProperty Name="TraceLogMaster" Relationship="ManageCenterDBModel.ETaskTraceLogMaster" FromRole="ETask" ToRole="TraceLogMaster" />
+          <NavigationProperty Name="TraceLog" Relationship="ManageCenterDBModel.ETaskTraceLog" FromRole="ETask" ToRole="TraceLog" />
+          <Property Type="String" Name="Type" />
+          <Property Type="String" Name="Category" />
+        </EntityType>
+        <EntityType Name="ETaskAllocation">
+          <Key>
+            <PropertyRef Name="ETask_ID" />
+          </Key>
+          <Property Name="ETask_ID" Type="Int32" Nullable="false" />
+          <Property Name="EClient_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EClient" Relationship="ManageCenterDBModel.EClientETaskAllocation" FromRole="ETaskAllocation" ToRole="EClient" />
+          <NavigationProperty Name="ETask" Relationship="ManageCenterDBModel.ETaskETaskAllocation" FromRole="ETaskAllocation" ToRole="ETask" />
+        </EntityType>
+        <EntityType Name="EUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" />
+          <Property Name="UserPassword" Type="String" />
+          <Property Name="UserEmail" Type="String" />
+          <Property Name="LoginTime" Type="DateTime" />
+          <Property Name="LoginIP" Type="String" />
+          <Property Name="UserType" Type="String" />
+          <Property Name="HostName" Type="String" />
+          <Property Name="MacAddress" Type="String" />
+          <Property Name="CreateTime" Type="DateTime" />
+          <Property Name="NoWebLastVisitTime" Type="DateTime" />
+          <Property Name="CreateBy" Type="String" />
+          <Property Name="IsLocked" Type="String" />
+          <Property Name="NoWebVisitIP" Type="String" />
+          <NavigationProperty Name="ETask" Relationship="ManageCenterDBModel.EUserETask" FromRole="EUser" ToRole="ETask" />
+          <NavigationProperty Name="EUserRole" Relationship="ManageCenterDBModel.EUserEUserRole" FromRole="EUser" ToRole="EUserRole" />
+        </EntityType>
+        <EntityType Name="NoticeAllocate">
+          <Key>
+            <PropertyRef Name="nid" />
+          </Key>
+          <Property Name="nid" Type="Int32" Nullable="false" />
+          <Property Name="etaskId" Type="Int32" />
+          <Property Name="noticeMode" Type="Int32" />
+          <Property Name="receiverID" Type="Int32" />
+          <Property Name="enable" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NoticeReceiver">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" />
+          <Property Name="phone" Type="String" />
+          <Property Name="email" Type="String" />
+          <Property Name="enable" Type="Int32" />
+          <Property Name="remark" Type="String" />
+        </EntityType>
+        <EntityType Name="TraceLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ETask_ID" Type="Int32" Nullable="false" />
+          <Property Name="SubTask_ID" Type="Int32" />
+          <Property Name="TraceLogMaster_ID" Type="String" Nullable="false" />
+          <Property Name="Stage" Type="String" />
+          <Property Name="Data" Type="String" />
+          <Property Name="RunInfo" Type="String" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" />
+          <Property Name="EndTime" Type="DateTime" />
+          <NavigationProperty Name="TraceLogMaster" Relationship="ManageCenterDBModel.TraceLogMasterTraceLog" FromRole="TraceLog" ToRole="TraceLogMaster" />
+          <NavigationProperty Name="ETask" Relationship="ManageCenterDBModel.ETaskTraceLog" FromRole="TraceLog" ToRole="ETask" />
+          <Property Type="String" Name="Status" />
+        </EntityType>
+        <EntityType Name="TraceLogMaster">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" />
+          <Property Name="ETask_ID" Type="Int32" Nullable="false" />
+          <Property Name="DataCount" Type="Int32" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" />
+          <Property Name="EndTime" Type="DateTime" />
+          <Property Name="Note" Type="String" />
+          <NavigationProperty Name="TraceLog" Relationship="ManageCenterDBModel.TraceLogMasterTraceLog" FromRole="TraceLogMaster" ToRole="TraceLog" />
+          <NavigationProperty Name="ETask" Relationship="ManageCenterDBModel.ETaskTraceLogMaster" FromRole="TraceLogMaster" ToRole="ETask" />
+          <Property Type="String" Name="Status" />
+        </EntityType>
+        <Association Name="EClientETaskAllocation">
+          <End Type="ManageCenterDBModel.EClient" Role="EClient" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.ETaskAllocation" Role="ETaskAllocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EClient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ETaskAllocation">
+              <PropertyRef Name="EClient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ETaskETaskAllocation">
+          <End Type="ManageCenterDBModel.ETask" Role="ETask" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.ETaskAllocation" Role="ETaskAllocation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ETask">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ETaskAllocation">
+              <PropertyRef Name="ETask_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ESourceBaseInfoESource">
+          <End Type="ManageCenterDBModel.ESourceBaseInfo" Role="ESourceBaseInfo" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.ESource" Role="ESource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESourceBaseInfo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ESource">
+              <PropertyRef Name="ESourceBaseInfo_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ESourceESchema">
+          <End Type="ManageCenterDBModel.ESource" Role="ESource" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.ESchema" Role="ESchema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESource">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ESchema">
+              <PropertyRef Name="ESource_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ESchemaETask">
+          <End Type="ManageCenterDBModel.ESchema" Role="ESchema" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.ETask" Role="ETask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESchema">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ETask">
+              <PropertyRef Name="SourceESchema_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EUserETask">
+          <End Type="ManageCenterDBModel.EUser" Role="EUser" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.ETask" Role="ETask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="ETask">
+              <PropertyRef Name="OperationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TraceLogMasterTraceLog">
+          <End Type="ManageCenterDBModel.TraceLogMaster" Role="TraceLogMaster" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.TraceLog" Role="TraceLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TraceLogMaster">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TraceLog">
+              <PropertyRef Name="TraceLogMaster_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ESchemaETask1">
+          <End Type="ManageCenterDBModel.ESchema" Role="ESchema" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.ETask" Role="ETask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ESchema">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ETask">
+              <PropertyRef Name="TargetESchema_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ETaskTraceLogMaster">
+          <End Type="ManageCenterDBModel.ETask" Role="ETask" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.TraceLogMaster" Role="TraceLogMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ETask">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TraceLogMaster">
+              <PropertyRef Name="ETask_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ETaskTraceLog">
+          <End Type="ManageCenterDBModel.ETask" Role="ETask" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.TraceLog" Role="TraceLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ETask">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TraceLog">
+              <PropertyRef Name="ETask_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ERole">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" />
+          <Property Type="Int32" Name="RoleType" />
+          <Property Type="String" Name="RoleDesc" />
+          <NavigationProperty Name="EUserRole" Relationship="ManageCenterDBModel.ERoleEUserRole" FromRole="ERole" ToRole="EUserRole" />
+        </EntityType>
+        <EntityType Name="EUserRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <NavigationProperty Name="EUser" Relationship="ManageCenterDBModel.EUserEUserRole" FromRole="EUserRole" ToRole="EUser" />
+          <NavigationProperty Name="ERole" Relationship="ManageCenterDBModel.ERoleEUserRole" FromRole="EUserRole" ToRole="ERole" />
+        </EntityType>
+        <Association Name="EUserEUserRole">
+          <End Type="ManageCenterDBModel.EUser" Role="EUser" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.EUserRole" Role="EUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EUser">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="EUserRole">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ERoleEUserRole">
+          <End Type="ManageCenterDBModel.ERole" Role="ERole" Multiplicity="1" />
+          <End Type="ManageCenterDBModel.EUserRole" Role="EUserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ERole">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="EUserRole">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ManageCenterDBModelStoreContainer" CdmEntityContainer="ManageCenterDBEntities">
+          <EntitySetMapping Name="eclient"><EntityTypeMapping TypeName="ManageCenterDBModel.EClient"><MappingFragment StoreEntitySet="eclient">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="eschema"><EntityTypeMapping TypeName="ManageCenterDBModel.ESchema"><MappingFragment StoreEntitySet="eschema">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ESource_ID" ColumnName="ESource_ID" />
+            <ScalarProperty Name="Schema" ColumnName="Schema" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="esource"><EntityTypeMapping TypeName="ManageCenterDBModel.ESource"><MappingFragment StoreEntitySet="esource">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ESourceBaseInfo_ID" ColumnName="ESourceBaseInfo_ID" />
+            <ScalarProperty Name="SourceConfig" ColumnName="SourceConfig" />
+            <ScalarProperty Name="SourceType" ColumnName="SourceType" />
+            <ScalarProperty Name="OriginalConfig" ColumnName="OriginalConfig" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="esourcebaseinfo"><EntityTypeMapping TypeName="ManageCenterDBModel.ESourceBaseInfo"><MappingFragment StoreEntitySet="esourcebaseinfo">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Config" ColumnName="Config" />
+            <ScalarProperty Name="AliasName" ColumnName="AliasName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="etask"><EntityTypeMapping TypeName="ManageCenterDBModel.ETask"><MappingFragment StoreEntitySet="etask">
+            <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="SourceESchema_ID" ColumnName="SourceESchema_ID" />
+            <ScalarProperty Name="TargetESchema_ID" ColumnName="TargetESchema_ID" />
+            <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+            <ScalarProperty Name="XSLTInfo" ColumnName="XSLTInfo" />
+            <ScalarProperty Name="Mapping" ColumnName="Mapping" />
+            <ScalarProperty Name="Enable" ColumnName="Enable" />
+            <ScalarProperty Name="Note" ColumnName="Note" />
+            <ScalarProperty Name="Interval" ColumnName="Interval" />
+            <ScalarProperty Name="OperationID" ColumnName="OperationID" />
+            <ScalarProperty Name="OperationDate" ColumnName="OperationDate" />
+            </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="etaskallocation"><EntityTypeMapping TypeName="ManageCenterDBModel.ETaskAllocation"><MappingFragment StoreEntitySet="etaskallocation">
+            <ScalarProperty Name="ETask_ID" ColumnName="ETask_ID" />
+            <ScalarProperty Name="EClient_ID" ColumnName="EClient_ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="euser"><EntityTypeMapping TypeName="ManageCenterDBModel.EUser"><MappingFragment StoreEntitySet="euser">
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+            <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+            <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+            <ScalarProperty Name="LoginIP" ColumnName="LoginIP" />
+            <ScalarProperty Name="UserType" ColumnName="UserType" />
+            <ScalarProperty Name="HostName" ColumnName="HostName" />
+            <ScalarProperty Name="MacAddress" ColumnName="MacAddress" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="NoWebLastVisitTime" ColumnName="NoWebLastVisitTime" />
+            <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+            <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+            <ScalarProperty Name="NoWebVisitIP" ColumnName="NoWebVisitIP" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="noticeallocate"><EntityTypeMapping TypeName="ManageCenterDBModel.NoticeAllocate"><MappingFragment StoreEntitySet="noticeallocate">
+            <ScalarProperty Name="nid" ColumnName="nid" />
+            <ScalarProperty Name="etaskId" ColumnName="etaskId" />
+            <ScalarProperty Name="noticeMode" ColumnName="noticeMode" />
+            <ScalarProperty Name="receiverID" ColumnName="receiverID" />
+            <ScalarProperty Name="enable" ColumnName="enable" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="noticereceiver"><EntityTypeMapping TypeName="ManageCenterDBModel.NoticeReceiver"><MappingFragment StoreEntitySet="noticereceiver">
+            <ScalarProperty Name="uid" ColumnName="uid" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="phone" ColumnName="phone" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="enable" ColumnName="enable" />
+            <ScalarProperty Name="remark" ColumnName="remark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tracelog"><EntityTypeMapping TypeName="ManageCenterDBModel.TraceLog"><MappingFragment StoreEntitySet="tracelog">
+            <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ETask_ID" ColumnName="ETask_ID" />
+            <ScalarProperty Name="SubTask_ID" ColumnName="SubTask_ID" />
+            <ScalarProperty Name="TraceLogMaster_ID" ColumnName="TraceLogMaster_ID" />
+            <ScalarProperty Name="Stage" ColumnName="Stage" />
+            <ScalarProperty Name="Data" ColumnName="Data" />
+            <ScalarProperty Name="RunInfo" ColumnName="RunInfo" />
+            <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+            <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tracelogmaster"><EntityTypeMapping TypeName="ManageCenterDBModel.TraceLogMaster"><MappingFragment StoreEntitySet="tracelogmaster">
+            <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ETask_ID" ColumnName="ETask_ID" />
+            <ScalarProperty Name="DataCount" ColumnName="DataCount" />
+            <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+            <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+            <ScalarProperty Name="Note" ColumnName="Note" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="erole">
+            <EntityTypeMapping TypeName="ManageCenterDBModel.ERole">
+              <MappingFragment StoreEntitySet="erole">
+                <ScalarProperty Name="RoleDesc" ColumnName="RoleDesc" />
+                <ScalarProperty Name="RoleType" ColumnName="RoleType" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="euserrole">
+            <EntityTypeMapping TypeName="ManageCenterDBModel.EUserRole">
+              <MappingFragment StoreEntitySet="euserrole">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ManageCenterDB" ZoomLevel="100">
+        <EntityTypeShape EntityType="ManageCenterDBModel.EClient" Width="1.5" PointX="0.75" PointY="0.75" Height="1.5879931640625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.ESchema" Width="1.625" PointX="5.375" PointY="6" Height="2.3520719401041674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.ESource" Width="1.625" PointX="5.375" PointY="3.125" Height="2.3520719401041656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.ESourceBaseInfo" Width="1.625" PointX="5.375" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.ETask" Width="1.75" PointX="3" PointY="3.125" Height="4.6443082682291656" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.ETaskAllocation" Width="1.625" PointX="3" PointY="0.75" Height="1.7790128580729165" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.EUser" Width="1.5" PointX="7.625" PointY="0.75" Height="3.8802294921874996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.NoticeAllocate" Width="1.5" PointX="5.5" PointY="9.125" Height="1.9700325520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.NoticeReceiver" Width="1.5" PointX="3.375" PointY="8.875" Height="2.1610522460937496" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.TraceLog" Width="1.5" PointX="0.75" PointY="6.75" Height="3.3071704101562478" IsExpanded="true" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.TraceLogMaster" Width="1.5" PointX="0.75" PointY="3.125" Height="2.7341113281249987" IsExpanded="true" />
+        <AssociationConnector Association="ManageCenterDBModel.EClientETaskAllocation">
+          <ConnectorPoint PointX="2.25" PointY="1.6395064290364583" />
+          <ConnectorPoint PointX="3" PointY="1.6395064290364583" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ETaskETaskAllocation">
+          <ConnectorPoint PointX="3.8125" PointY="3.125" />
+          <ConnectorPoint PointX="3.8125" PointY="2.5290128580729165" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ESourceBaseInfoESource">
+          <ConnectorPoint PointX="6.1875" PointY="2.529012858072917" />
+          <ConnectorPoint PointX="6.1875" PointY="3.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ESourceESchema">
+          <ConnectorPoint PointX="6.1875" PointY="5.4770719401041656" />
+          <ConnectorPoint PointX="6.1875" PointY="6" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ESchemaETask">
+          <ConnectorPoint PointX="5.375" PointY="7.2430754264195754" />
+          <ConnectorPoint PointX="4.75" PointY="7.2430754264195754" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.EUserETask">
+          <ConnectorPoint PointX="8.375" PointY="4.8212491861979156" />
+          <ConnectorPoint PointX="8.375" PointY="5.7385359700520828" />
+          <ConnectorPoint PointX="6.270833333333333" PointY="5.7385359700520819" />
+          <ConnectorPoint PointX="6.104166666666667" PointY="5.7385359700520828" />
+          <ConnectorPoint PointX="4.75" PointY="5.7385359700520828" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.TraceLogMasterTraceLog">
+          <ConnectorPoint PointX="1.5" PointY="5.8591113281249987" />
+          <ConnectorPoint PointX="1.5" PointY="6.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ESchemaETask1">
+          <ConnectorPoint PointX="5.375" PointY="6.5590377132097881" />
+          <ConnectorPoint PointX="4.75" PointY="6.5590377132097881" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ETaskTraceLogMaster">
+          <ConnectorPoint PointX="3" PointY="4.4920556640625" />
+          <ConnectorPoint PointX="2.25" PointY="4.4920556640625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ETaskTraceLog">
+          <ConnectorPoint PointX="3" PointY="7.2596541341145828" />
+          <ConnectorPoint PointX="2.25" PointY="7.2596541341145828" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ManageCenterDBModel.ERole" Width="1.5" PointX="9.75" PointY="3.5" Height="1.9700325520833335" />
+        <EntityTypeShape EntityType="ManageCenterDBModel.EUserRole" Width="1.5" PointX="9.75" PointY="0.75" Height="1.9700325520833335" />
+        <AssociationConnector Association="ManageCenterDBModel.EUserEUserRole">
+          <ConnectorPoint PointX="9.125" PointY="1.7350162760416668" />
+          <ConnectorPoint PointX="9.75" PointY="1.7350162760416668" />
+        </AssociationConnector>
+        <AssociationConnector Association="ManageCenterDBModel.ERoleEUserRole">
+          <ConnectorPoint PointX="10.5" PointY="3.5" />
+          <ConnectorPoint PointX="10.5" PointY="2.7200325520833335" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

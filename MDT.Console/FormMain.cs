@@ -102,6 +102,15 @@ namespace MDT.Console
             }
         }
 
+        private void nbi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Application.DoEvents();
+
+            Cursor.Current = Cursors.WaitCursor;
+            addUserControl(e.Link.Caption);
+            Cursor.Current = Cursors.Default;
+        }
+
         private void nbiDatabase_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Application.DoEvents();
@@ -147,5 +156,6 @@ namespace MDT.Console
         {
 
         }
+
     }
 }

@@ -35,14 +35,14 @@
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.nbiDatabase = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiTask = new DevExpress.XtraNavBar.NavBarItem();
-            this.nbiTaskAllocation = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiTraceLog = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiDatabase = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiTaskAllocation = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiTask = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.nbiUser = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiSecure = new DevExpress.XtraNavBar.NavBarItem();
             this.pnlRight = new DevExpress.XtraEditors.PanelControl();
             this.pnlTop = new DevExpress.XtraEditors.PanelControl();
             this.lblTip = new DevExpress.XtraEditors.LabelControl();
@@ -105,8 +105,8 @@
             this.nbiTask,
             this.nbiTaskAllocation,
             this.nbiTraceLog,
-            this.navBarItem5,
-            this.navBarItem6});
+            this.nbiUser,
+            this.nbiSecure});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 179;
@@ -122,6 +122,13 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTraceLog)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
+            // nbiTraceLog
+            // 
+            this.nbiTraceLog.Caption = "日志信息";
+            this.nbiTraceLog.Name = "nbiTraceLog";
+            this.nbiTraceLog.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTraceLog.SmallImage")));
+            this.nbiTraceLog.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTraceLog_LinkClicked);
+            // 
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "任务管理";
@@ -132,28 +139,12 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTask)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
-            // navBarGroup3
-            // 
-            this.navBarGroup3.Caption = "用户管理";
-            this.navBarGroup3.Expanded = true;
-            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
-            this.navBarGroup3.Name = "navBarGroup3";
-            // 
             // nbiDatabase
             // 
             this.nbiDatabase.Caption = "数据源配置";
             this.nbiDatabase.Name = "nbiDatabase";
             this.nbiDatabase.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiDatabase.SmallImage")));
             this.nbiDatabase.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDatabase_LinkClicked);
-            // 
-            // nbiTask
-            // 
-            this.nbiTask.Caption = "任务配置";
-            this.nbiTask.Name = "nbiTask";
-            this.nbiTask.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTask.SmallImage")));
-            this.nbiTask.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTask_LinkClicked);
             // 
             // nbiTaskAllocation
             // 
@@ -162,24 +153,35 @@
             this.nbiTaskAllocation.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTaskAllocation.SmallImage")));
             this.nbiTaskAllocation.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTaskAllocation_LinkClicked);
             // 
-            // nbiTraceLog
+            // nbiTask
             // 
-            this.nbiTraceLog.Caption = "日志信息";
-            this.nbiTraceLog.Name = "nbiTraceLog";
-            this.nbiTraceLog.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTraceLog.SmallImage")));
-            this.nbiTraceLog.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTraceLog_LinkClicked);
+            this.nbiTask.Caption = "任务配置";
+            this.nbiTask.Name = "nbiTask";
+            this.nbiTask.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTask.SmallImage")));
+            this.nbiTask.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTask_LinkClicked);
             // 
-            // navBarItem5
+            // navBarGroup3
             // 
-            this.navBarItem5.Caption = "用户中心";
-            this.navBarItem5.Name = "navBarItem5";
-            this.navBarItem5.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem5.SmallImage")));
+            this.navBarGroup3.Caption = "用户管理";
+            this.navBarGroup3.Expanded = true;
+            this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiUser),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiSecure)});
+            this.navBarGroup3.Name = "navBarGroup3";
             // 
-            // navBarItem6
+            // nbiUser
             // 
-            this.navBarItem6.Caption = "安全管理";
-            this.navBarItem6.Name = "navBarItem6";
-            this.navBarItem6.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem6.SmallImage")));
+            this.nbiUser.Caption = "用户中心";
+            this.nbiUser.Name = "nbiUser";
+            this.nbiUser.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiUser.SmallImage")));
+            this.nbiUser.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbi_LinkClicked);
+            // 
+            // nbiSecure
+            // 
+            this.nbiSecure.Caption = "安全管理";
+            this.nbiSecure.Name = "nbiSecure";
+            this.nbiSecure.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiSecure.SmallImage")));
+            this.nbiSecure.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbi_LinkClicked);
             // 
             // pnlRight
             // 
@@ -327,8 +329,8 @@
         private DevExpress.XtraNavBar.NavBarItem nbiTask;
         private DevExpress.XtraNavBar.NavBarItem nbiTaskAllocation;
         private DevExpress.XtraNavBar.NavBarItem nbiTraceLog;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarItem nbiUser;
+        private DevExpress.XtraNavBar.NavBarItem nbiSecure;
     }
 }
 

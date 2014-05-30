@@ -333,15 +333,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\DevExpress.Data.v10.1.dll" />
     <Content Include="lib\DevExpress.Data.v13.1.dll" />
-    <Content Include="lib\DevExpress.Utils.v10.1.dll" />
     <Content Include="lib\DevExpress.Utils.v13.1.dll" />
-    <Content Include="lib\DevExpress.XtraEditors.v10.1.dll" />
     <Content Include="lib\DevExpress.XtraEditors.v13.1.dll" />
-    <Content Include="lib\DevExpress.XtraGrid.v10.1.dll" />
     <Content Include="lib\DevExpress.XtraGrid.v13.1.dll" />
-    <Content Include="lib\DevExpress.XtraTreeList.v10.1.dll" />
     <Content Include="lib\DevExpress.XtraTreeList.v13.1.dll" />
     <Content Include="lib\ICSharpCode.Setting.dll" />
     <Content Include="lib\ICSharpCode.TextEditor.dll" />

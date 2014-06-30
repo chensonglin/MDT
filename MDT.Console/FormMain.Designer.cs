@@ -196,6 +196,8 @@
             this.pnlTop.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.pnlTop.Appearance.Options.UseBackColor = true;
             this.pnlTop.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pnlTop.ContentImage = ((System.Drawing.Image)(resources.GetObject("pnlTop.ContentImage")));
+            this.pnlTop.ContentImageAlignment = System.Drawing.ContentAlignment.MiddleRight;
             this.pnlTop.Controls.Add(this.lblTip);
             this.pnlTop.Controls.Add(this.pictureBox1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;

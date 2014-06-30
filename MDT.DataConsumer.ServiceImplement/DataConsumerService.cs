@@ -561,5 +561,22 @@ namespace MDT.DataConsumer.ServiceImplement
             //var t = trace.Read(traceId);
             //Send(t.TaskId, t.ProcessLN, t.Data);
         }
+
+        #region 清除缓存
+
+        public void CleanCache(List<int> taskIds )
+        {
+            var etask = cache.GetData("ETask");
+            cache.Remove("ETask");
+            foreach (var id in taskIds)
+            {
+                var ds = cache.GetData("DS" + id);
+                var dps = cache.GetData("DPS" + id);
+                cache.Remove("DS" + id);
+                cache.Remove("DPS" + id);
+            }
+        }
+
+        #endregion
     }
 }

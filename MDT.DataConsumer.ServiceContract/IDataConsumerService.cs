@@ -17,5 +17,8 @@ namespace MDT.DataConsumer.ServiceContract
 
         [OperationContract]
         void ReSend(int traceId);
+
+        [OperationContract]
+        void CleanCache(List<int> taskIds);
     }
 }

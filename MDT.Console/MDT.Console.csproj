@@ -108,6 +108,9 @@
     <Reference Include="ICSharpCode.TextEditor">
       <HintPath>..\SharedLibrary\ICSharpCode.TextEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -252,6 +255,7 @@
       <DependentUpon>UCUserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UserEntity.cs" />
+    <Compile Include="WcfServiceFactory.cs" />
     <EmbeddedResource Include="FormDatabaseSet.resx">
       <DependentUpon>FormDatabaseSet.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,9 +361,15 @@
     <Content Include="MappingToXSLT.xslt" />
     <None Include="Resources\user.ico" />
     <None Include="Resources\time.ico" />
+    <Content Include="Resources\loginBG.jpg" />
+    <Content Include="Resources\logo.png" />
     <Content Include="transfer_48.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MDT.DataConsumer.ServiceContract\MDT.DataConsumer.ServiceContract.csproj">
+      <Project>{e9c1da74-b7da-4cfb-a7e0-39cb7db63c50}</Project>
+      <Name>MDT.DataConsumer.ServiceContract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MDT.DataProducer.DataContract\MDT.DataProducer.DataContract.csproj">
       <Project>{E0C259E2-26BE-4505-95EF-AA54F762CC77}</Project>
       <Name>MDT.DataProducer.DataContract</Name>

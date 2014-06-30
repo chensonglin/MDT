@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.Serialization;
 using DevExpress.XtraGrid;
+using MDT.DataConsumer.ServiceContract;
 using MDT.ManageCenter.DAL;
 using MDT.ManageCenter.DataContract;
 using MDT.ManageCenter.ServiceContract;
@@ -158,6 +159,28 @@ namespace MDT.Console
                 }
                 service.AllocateTask(clientId, ids.ToArray());
                 MessageBox.Show("保存成功！");
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private void btnCleanCache_Click(object sender, EventArgs e)
+        {
+            if (gvClient.SelectedRowsCount > 0)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                int clientId = Convert.ToInt32(gvClient.GetRowCellValue(gvClient.GetFocusedDataSourceRowIndex(), "ID").ToString());
+                List<int> ids = new List<int>();
+                List<TaskItem> list = (List<TaskItem>)gvTask.DataSource;
+                if (list != null && list.Count > 0)
+                {
+                    foreach (TaskItem t in list)
+                    {
+                        if (t.IsAllocation)
+                            ids.Add(t.ID);
+                    }
+                }
+                WcfServiceFactory.Invoke<IDataConsumerService>(client => client.CleanCache(ids), "dataConsumerService");
+                MessageBox.Show("清除完成！");
                 Cursor.Current = Cursors.Default;
             }
         }

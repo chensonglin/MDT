@@ -48,6 +48,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.sbtnSave = new DevExpress.XtraEditors.SimpleButton();
             this.checkEditAll = new DevExpress.XtraEditors.CheckEdit();
+            this.btnCleanCache = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -101,12 +102,12 @@
             // gridClient
             // 
             this.gridClient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridClient.Location = new System.Drawing.Point(2, 23);
+            this.gridClient.Location = new System.Drawing.Point(2, 22);
             this.gridClient.MainView = this.gvClient;
             this.gridClient.Name = "gridClient";
             this.gridClient.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit2});
-            this.gridClient.Size = new System.Drawing.Size(194, 497);
+            this.gridClient.Size = new System.Drawing.Size(194, 498);
             this.gridClient.TabIndex = 8;
             this.gridClient.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvClient});
@@ -153,6 +154,7 @@
             // repositoryItemCheckEdit2
             // 
             this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Caption = "Check";
             this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             this.repositoryItemCheckEdit2.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
             // 
@@ -163,19 +165,19 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(652, 522);
+            this.groupControl2.Size = new System.Drawing.Size(653, 522);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "任务列表";
             // 
             // gridTask
             // 
             this.gridTask.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridTask.Location = new System.Drawing.Point(2, 23);
+            this.gridTask.Location = new System.Drawing.Point(2, 22);
             this.gridTask.MainView = this.gvTask;
             this.gridTask.Name = "gridTask";
             this.gridTask.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridTask.Size = new System.Drawing.Size(648, 458);
+            this.gridTask.Size = new System.Drawing.Size(649, 459);
             this.gridTask.TabIndex = 6;
             this.gridTask.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTask});
@@ -215,6 +217,7 @@
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Caption = "Check";
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             this.repositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
             // 
@@ -252,12 +255,13 @@
             // groupControl3
             // 
             this.groupControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl3.Controls.Add(this.btnCleanCache);
             this.groupControl3.Controls.Add(this.sbtnSave);
             this.groupControl3.Controls.Add(this.checkEditAll);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl3.Location = new System.Drawing.Point(2, 481);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(648, 39);
+            this.groupControl3.Size = new System.Drawing.Size(649, 39);
             this.groupControl3.TabIndex = 7;
             this.groupControl3.Text = "groupControl3";
             // 
@@ -278,6 +282,16 @@
             this.checkEditAll.Size = new System.Drawing.Size(75, 19);
             this.checkEditAll.TabIndex = 7;
             this.checkEditAll.CheckedChanged += new System.EventHandler(this.checkEdit1_CheckedChanged);
+            // 
+            // btnCleanCache
+            // 
+            this.btnCleanCache.Location = new System.Drawing.Point(191, 9);
+            this.btnCleanCache.Name = "btnCleanCache";
+            this.btnCleanCache.Size = new System.Drawing.Size(75, 23);
+            this.btnCleanCache.TabIndex = 8;
+            this.btnCleanCache.Text = "清除缓存";
+            this.btnCleanCache.UseVisualStyleBackColor = true;
+            this.btnCleanCache.Click += new System.EventHandler(this.btnCleanCache_Click);
             // 
             // UCTaskAllocation
             // 
@@ -328,5 +342,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraEditors.CheckEdit checkEditAll;
+        private System.Windows.Forms.Button btnCleanCache;
     }
 }

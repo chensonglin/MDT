@@ -50,7 +50,6 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Location = new System.Drawing.Point(236, 32);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 14);
@@ -71,7 +70,7 @@
             this.txtPassword.Location = new System.Drawing.Point(290, 67);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Properties.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(140, 21);
+            this.txtPassword.Size = new System.Drawing.Size(140, 20);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
@@ -87,7 +86,7 @@
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("测试环境-239", "wzolmdt-239", -1),
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("测试环境-205", "wzolmdt-205", -1),
             new DevExpress.XtraEditors.Controls.ImageComboBoxItem("正式环境", "wzolmdt-zs", -1)});
-            this.dropdownServer.Size = new System.Drawing.Size(140, 21);
+            this.dropdownServer.Size = new System.Drawing.Size(140, 20);
             this.dropdownServer.TabIndex = 2;
             this.dropdownServer.SelectedIndexChanged += new System.EventHandler(this.dropdownServer_SelectedIndexChanged);
             // 
@@ -146,7 +145,7 @@
             this.txtUserName.EnterMoveNextControl = true;
             this.txtUserName.Location = new System.Drawing.Point(290, 29);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(140, 21);
+            this.txtUserName.Size = new System.Drawing.Size(140, 20);
             this.txtUserName.TabIndex = 0;
             // 
             // sbtnExit
